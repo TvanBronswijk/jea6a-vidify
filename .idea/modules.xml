@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/server/vidify.iml" filepath="$PROJECT_DIR$/server/vidify.iml" />
       <module fileurl="file://$PROJECT_DIR$/server/vidify-aggregator/vidify-aggregator.iml" filepath="$PROJECT_DIR$/server/vidify-aggregator/vidify-aggregator.iml" />
       <module fileurl="file://$PROJECT_DIR$/server/vidify-analyzer/vidify-analyzer.iml" filepath="$PROJECT_DIR$/server/vidify-analyzer/vidify-analyzer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server/vidify-api/vidify-api.iml" filepath="$PROJECT_DIR$/server/vidify-api/vidify-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/server/vidify-api-command/vidify-api-command.iml" filepath="$PROJECT_DIR$/server/vidify-api-command/vidify-api-command.iml" />
       <module fileurl="file://$PROJECT_DIR$/server/vidify-api-query/vidify-api-query.iml" filepath="$PROJECT_DIR$/server/vidify-api-query/vidify-api-query.iml" />
       <module fileurl="file://$PROJECT_DIR$/server/vidify-core/vidify-core.iml" filepath="$PROJECT_DIR$/server/vidify-core/vidify-core.iml" />

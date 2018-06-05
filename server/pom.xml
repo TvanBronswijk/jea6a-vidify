@@ -32,6 +32,7 @@
 		<module>vidify-analyzer</module>
 		<module>vidify-api-command</module>
 		<module>vidify-api-query</module>
+		<module>vidify-api</module>
 		<module>vidify-logging</module>
     </modules>
 

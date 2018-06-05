@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="vidify-aggregator" />
         <module name="vidify-analyzer" />
+        <module name="vidify-api" />
         <module name="vidify-api-command" />
         <module name="vidify-api-query" />
         <module name="vidify-core" />
@@ -20,6 +21,7 @@
       <module name="vidify" target="1.8" />
       <module name="vidify-aggregator" target="1.8" />
       <module name="vidify-analyzer" target="1.8" />
+      <module name="vidify-api" target="1.8" />
       <module name="vidify-api-command" target="1.8" />
       <module name="vidify-api-query" target="1.8" />
       <module name="vidify-core" target="1.8" />
