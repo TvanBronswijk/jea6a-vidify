@@ -10,7 +10,7 @@ import java.util.Map;
 
 @Service
 public class RedisManager {
-    public final String KEY = "_vidify_";
+    private final String KEY = "_vidify_";
 
     private final RedisTemplate<String, Object> redis;
     private final HashOperations<String, Long, RedisObject> hash;
@@ -19,6 +19,10 @@ public class RedisManager {
     public RedisManager(RedisTemplate<String, Object> redis) {
         this.redis = redis;
         hash = this.redis.opsForHash();
+    }
+
+    public String getKey() {
+        return KEY;
     }
 
     public void add(RedisObject entity) {

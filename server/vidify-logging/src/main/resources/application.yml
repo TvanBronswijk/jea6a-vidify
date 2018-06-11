@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: vidify-logging
+
+server:
+  port: ${PORT:5003}
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    server:
+      waitTimeInMsWhenSyncEmpty: 0

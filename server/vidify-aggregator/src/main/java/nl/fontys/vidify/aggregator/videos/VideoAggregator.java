@@ -36,6 +36,7 @@ public class VideoAggregator {
 
         Video entity = new Video();
         JSONObject element = result.getJSONArray("items").getJSONObject(0);
+        entity.setId(element.getJSONObject("id").getString("videoId"));
         entity.setUrl("http://youtube.com/watch?v=" + element.getJSONObject("id").getString("videoId"));
         entity.setName(element.getJSONObject("snippet").getString("title"));
 

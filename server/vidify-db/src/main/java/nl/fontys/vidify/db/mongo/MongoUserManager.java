@@ -24,8 +24,8 @@ public class MongoUserManager implements UserManager {
     }
 
     @Override
-    public void delete(User entity) {
-        repository.delete(entity);
+    public void delete(String id) {
+        repository.delete(getById(id));
     }
 
     @Override

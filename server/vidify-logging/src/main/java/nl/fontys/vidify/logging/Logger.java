@@ -1,6 +1,7 @@
 package nl.fontys.vidify.logging;
 
-import nl.fontys.vidify.logging.models.Log;
+import nl.fontys.vidify.core.models.logging.Log;
+import nl.fontys.vidify.logging.models.LogWrapper;
 import nl.fontys.vidify.redis.RedisManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,12 +16,20 @@ public class Logger {
         this.redis = redis;
     }
 
-    public Log Log(String message) {
-        Log entity = new Log();
-        entity.setId(redis.generateId());
-        entity.setMessage(message);
-        redis.add(entity);
-        System.out.println(entity.toString());
-        return entity;
+    public Log log(String message, String userId) {
+        Log log = new Log(Log.ContentType.action, message, userId);
+        return log(log);
+    }
+
+    public Log log(String message) {
+        Log log = new Log(Log.ContentType.action, message);
+        return log(log);
+    }
+
+    public Log log(Log log) {
+        LogWrapper redisLog = new LogWrapper(redis.generateId(), log);
+        redis.add(redisLog);
+        System.out.println(log.toString());
+        return log;
     }
 }

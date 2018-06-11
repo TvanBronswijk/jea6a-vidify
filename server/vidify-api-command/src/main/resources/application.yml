@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: vidify-api-command
+
+server:
+  port: ${PORT:5001}
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    server:
+      waitTimeInMsWhenSyncEmpty: 0

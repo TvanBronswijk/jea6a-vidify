@@ -7,9 +7,11 @@
     <file url="file://$PROJECT_DIR$/server/vidify-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server/vidify-api-command" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server/vidify-api-query" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/vidify-connector" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server/vidify-core" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server/vidify-db" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server/vidify-logging" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/vidify-messaging" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server/vidify-redis" charset="UTF-8" />
   </component>
 </project>

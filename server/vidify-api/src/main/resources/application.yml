@@ -1,0 +1,9 @@
+server:
+  port: ${PORT:5000}
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: true
+    server:
+      waitTimeInMsWhenSyncEmpty: 0

@@ -11,6 +11,7 @@
         <module name="vidify-api" />
         <module name="vidify-api-command" />
         <module name="vidify-api-query" />
+        <module name="vidify-connector" />
         <module name="vidify-core" />
         <module name="vidify-db" />
         <module name="vidify-logging" />
@@ -24,9 +25,11 @@
       <module name="vidify-api" target="1.8" />
       <module name="vidify-api-command" target="1.8" />
       <module name="vidify-api-query" target="1.8" />
+      <module name="vidify-connector" target="1.8" />
       <module name="vidify-core" target="1.8" />
       <module name="vidify-db" target="1.8" />
       <module name="vidify-logging" target="1.8" />
+      <module name="vidify-messaging" target="1.8" />
       <module name="vidify-redis" target="1.8" />
     </bytecodeTargetLevel>
   </component>

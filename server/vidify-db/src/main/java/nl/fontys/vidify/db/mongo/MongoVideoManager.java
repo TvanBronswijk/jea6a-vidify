@@ -23,8 +23,8 @@ public class MongoVideoManager implements VideoManager {
     }
 
     @Override
-    public void delete(Video entity) {
-        repository.delete(entity);
+    public void delete(String id) {
+        repository.delete(getById(id));
     }
 
     @Override
