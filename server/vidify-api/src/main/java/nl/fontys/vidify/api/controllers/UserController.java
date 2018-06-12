@@ -20,13 +20,13 @@ public class UserController extends BaseController<User> {
     }
 
     @Override
-    protected URI getQueryUri() {
-        return client.getInstances("vidify-api-query").get(0).getUri().resolve("/users/");
+    protected String getQueryUri() {
+        return client.getInstances("vidify-api-query").get(0).getUri() + "/users/";
     }
 
     @Override
-    protected URI getCommandUri() {
-        return client.getInstances("vidify-api-command").get(0).getUri().resolve("/users/");
+    protected String getCommandUri() {
+        return client.getInstances("vidify-api-command").get(0).getUri() + "/users/";
     }
 
     @Override
@@ -37,7 +37,7 @@ public class UserController extends BaseController<User> {
     @GetMapping("/username/{username}")
     public User get(@PathVariable String username) {
         return new RestTemplate()
-                .getForEntity(getQueryUri().resolve("username/" + username), getClassToken())
+                .getForEntity(getQueryUri() + "username/" + username, getClassToken())
                 .getBody();
     }
 }

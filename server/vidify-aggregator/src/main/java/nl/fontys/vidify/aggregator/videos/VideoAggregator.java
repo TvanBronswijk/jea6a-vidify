@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class VideoAggregator {
 
-    private final String API_URL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=date&type=video&key=AIzaSyD7-WPxfMRLERCLmIFjeVrLh9RvlBnuFsE&id=";
+    private final String API_URL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&order=date&type=video&key=AIzaSyD7-WPxfMRLERCLmIFjeVrLh9RvlBnuFsE&id=";
 
     private final VideoManager videoManager;
 
@@ -21,7 +21,7 @@ public class VideoAggregator {
         this.videoManager = videoManager;
     }
 
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 50000)
     public void aggregate() throws UnirestException {
         System.out.println("Aggregating...");
         JSONObject result = Unirest.get(API_URL)
@@ -34,14 +34,16 @@ public class VideoAggregator {
             return;
         }
 
-        Video entity = new Video();
-        JSONObject element = result.getJSONArray("items").getJSONObject(0);
-        entity.setId(element.getJSONObject("id").getString("videoId"));
-        entity.setUrl("http://youtube.com/watch?v=" + element.getJSONObject("id").getString("videoId"));
-        entity.setName(element.getJSONObject("snippet").getString("title"));
+        for(int i=0;i<20;i++){
+            Video entity = new Video();
+            JSONObject element = result.getJSONArray("items").getJSONObject(i);
+            entity.setId(element.getJSONObject("id").getString("videoId"));
+            entity.setUrl("http://youtube.com/watch?v=" + element.getJSONObject("id").getString("videoId"));
+            entity.setName(element.getJSONObject("snippet").getString("title"));
 
-        videoManager.create(entity);
+            videoManager.create(entity);
 
-        System.out.println("added: " + entity.getName() + "||" + entity.getUrl());
+            System.out.println("added: " + entity.getName() + "||" + entity.getUrl());
+        }
     }
 }

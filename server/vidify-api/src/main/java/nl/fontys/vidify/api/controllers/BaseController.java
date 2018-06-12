@@ -21,14 +21,14 @@ public abstract class BaseController<T> {
         this.client = client;
     }
 
-    protected abstract URI getQueryUri();
-    protected abstract URI getCommandUri();
+    protected abstract String getQueryUri();
+    protected abstract String getCommandUri();
     protected abstract Class<T> getClassToken();
 
     @GetMapping("/{id}")
     public T get(@PathVariable String id) {
         return new RestTemplate()
-                .getForEntity(getQueryUri().resolve(id), getClassToken())
+                .getForEntity(getQueryUri() + id, getClassToken())
                 .getBody();
     }
 
@@ -41,13 +41,14 @@ public abstract class BaseController<T> {
     }
 
     @PostMapping
-    public void create(T entity) {
+    public void create(@RequestBody T entity) {
+        System.out.println(entity);
         new RestTemplate()
                 .postForEntity(getCommandUri(), entity, getClassToken());
     }
 
     @PutMapping
-    public void update(T entity) {
+    public void update(@RequestBody T entity) {
         new RestTemplate()
                 .put(getCommandUri(), entity);
     }
@@ -55,6 +56,6 @@ public abstract class BaseController<T> {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable String id) {
         new RestTemplate()
-                .delete(getCommandUri().resolve(id));
+                .delete(getCommandUri() + id);
     }
 }

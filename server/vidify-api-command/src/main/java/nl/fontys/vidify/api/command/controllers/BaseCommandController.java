@@ -2,9 +2,7 @@ package nl.fontys.vidify.api.command.controllers;
 
 import nl.fontys.vidify.api.command.services.BaseCommands;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.*;
 
 public abstract class BaseCommandController<T> {
 
@@ -16,17 +14,17 @@ public abstract class BaseCommandController<T> {
     }
 
     @PostMapping
-    public void create(T entity) {
+    public void create(@RequestBody T entity) {
         baseCommands.create(entity);
     }
 
     @PutMapping
-    public void update(T entity) {
+    public void update(@RequestBody T entity) {
         baseCommands.update(entity);
     }
 
-    @DeleteMapping
-    public void delete(String id) {
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable String id) {
         baseCommands.delete(id);
     }
 }

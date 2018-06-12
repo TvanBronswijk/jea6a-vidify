@@ -2,15 +2,15 @@ package nl.fontys.vidify.api.query.controllers;
 
 import nl.fontys.vidify.api.query.services.BaseQueries;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Collection;
 
 public class BaseQueryController<T> {
 
-    private final BaseQueries<T> baseQueries;
+    BaseQueries<T> baseQueries;
 
-    @Autowired
     public BaseQueryController(BaseQueries<T> baseQueries) {
         this.baseQueries = baseQueries;
     }
@@ -24,4 +24,6 @@ public class BaseQueryController<T> {
     public Collection<T> getAll() {
         return baseQueries.getAll();
     }
+
+
 }

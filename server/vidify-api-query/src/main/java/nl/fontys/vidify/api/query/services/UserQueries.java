@@ -16,6 +16,7 @@ public class UserQueries extends BaseQueries<User> {
     }
 
     public User getByUsername(String username) {
+        log(username + " retrieved.");
         return manager.getByUsername(username);
     }
 

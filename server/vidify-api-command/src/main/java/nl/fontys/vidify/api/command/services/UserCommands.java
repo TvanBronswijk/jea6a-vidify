@@ -7,11 +7,4 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserCommands extends BaseCommands<User> {
-
-    private final UserCommandManager manager;
-
-    @Autowired
-    public UserCommands(UserCommandManager manager) {
-        this.manager = manager;
-    }
 }
